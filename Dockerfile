@@ -32,10 +32,17 @@ RUN cd /var/seniot/workflow/nodes/node-red-nodes/ \
 	&& npm install \
 	&& npm update
 
+#install aws-iot
+RUN cd /var/seniot/workflow/nodes/node-red-nodes/io/aws-iot \
+    && npm install
+
 #install freeboard.io
+RUN cd /var/seniot/workflow \
+    && npm install node-red-contrib-freeboard
 
 # expose port
 EXPOSE 1880
 
 # Run app using nodemon
+RUN cd /var/seniot/workflow
 CMD ["node", "/var/seniot/workflow/red.js"]
