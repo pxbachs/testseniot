@@ -32,6 +32,8 @@ RUN cd /var/seniot/workflow/nodes/node-red-nodes/ \
 	&& npm install \
 	&& npm update
 
+#install freeboard.io
+
 # expose port
 EXPOSE 1880
 
