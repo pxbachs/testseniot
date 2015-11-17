@@ -44,5 +44,5 @@ RUN cd /var/seniot/workflow \
 EXPOSE 1880
 
 # Run app using nodemon
-RUN cd /var/seniot/workflow
-CMD ["node", "/var/seniot/workflow/red.js"]
+CMD ["cd", ""/var/seniot/workflow"]
+CMD ["node", "red.js"]
