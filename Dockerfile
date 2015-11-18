@@ -8,8 +8,8 @@ RUN mkdir -p /var/seniot/
 # install node-red from seniot/ repository
 WORKDIR /var/seniot
 ADD . /var/seniot
-RUN mkdir -p /var/seniot/awsCerts
-VOLUME ["/var/seniot/awsCerts"]
+RUN mkdir -p /var/awsCerts
+VOLUME ["/var/awsCerts"]
 
 RUN git clone https://github.com/seniot/node-red.git /var/seniot/workflow
 RUN git clone https://github.com/seniot/node-red-nodes.git /var/seniot/workflow/nodes/node-red-nodes
@@ -44,5 +44,5 @@ RUN cd /var/seniot/workflow \
 EXPOSE 1880
 
 # Run app using nodemon
-CMD ["cd", ""/var/seniot/workflow"]
-CMD ["node", "red.js"]
+#CMD ["cd", "/var/seniot/workflow"]
+CMD ["node", "/var/seniot/workflow/red.js"]
